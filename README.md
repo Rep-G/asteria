@@ -3,7 +3,7 @@ Open-source Fortnite backend written in golang.
 ## Credits
 https://github.com/LeleDerGrasshalmi/FortniteEndpointsDocumentation 
 ## TODO
-[x] AccountService
+- [] AccountService
 [x] ArtifactDeliveryService
 [x] CalderaService
 [x] DataAssetDirectoryService
