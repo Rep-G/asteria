@@ -6,7 +6,6 @@ import (
 	"net/http"
 
 	"github.com/Rep-G/asteria/internal/api"
-	"github.com/Rep-G/asteria/internal/database"
 	"github.com/gorilla/mux"
 )
 
