@@ -26,8 +26,8 @@ app.post("/account/api/oauth/token", async (req, res) => {
             );
         };
         const base64Auth = req.headers["authorization"].split(" ")[1];
+        logger.debug(req.body.grant_type);
         authorization = decodeBase64(base64Auth).split(":");
-        logger.debug(req.body);
         // logger.debug(`Decoded authorization: ${authorization}`);
         if (!authorization[1])  return error.createError(
             "errors.com.epicgames.common.oauth.invalid_client",
