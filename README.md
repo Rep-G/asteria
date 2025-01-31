@@ -1,5 +1,5 @@
 # asteria
-Open-source Fortnite backend written in golang.
+Open-source Fortnite backend written in nodejs.
 ## Credits
 https://github.com/LeleDerGrasshalmi/FortniteEndpointsDocumentation 
 ## TODO

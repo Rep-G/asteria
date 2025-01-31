@@ -1,0 +1,33 @@
+{
+  "name": "asteria",
+  "version": "1.0.0",
+  "description": "OG Fortnite Backend.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rep-G/asteria.git"
+  },
+  "keywords": [
+    "Backend"
+  ],
+  "author": "Rep-G",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rep-G/asteria/issues"
+  },
+  "homepage": "https://github.com/Rep-G/asteria#readme",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "crypto": "^1.0.1",
+    "dirname-filename-esm": "^1.1.2",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5",
+    "uuid": "^11.0.5"
+  }
+}
