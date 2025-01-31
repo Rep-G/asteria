@@ -68,6 +68,7 @@ app.post("/account/api/oauth/token", async (req, res) => {
                     client_service: "fortnite"
                 });
                 return;
+            //case ""
         }
     }
     catch(err) {
@@ -78,6 +79,10 @@ app.post("/account/api/oauth/token", async (req, res) => {
             [], 1012, err.message, 500, res
         );
     }
+});
+
+app.post("/account/api/oauth/exchange", (req,res) => {
+
 });
 
 export default app;
