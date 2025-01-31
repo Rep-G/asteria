@@ -27,7 +27,8 @@ app.post("/account/api/oauth/token", async (req, res) => {
         };
         const base64Auth = req.headers["authorization"].split(" ")[1];
         logger.debug(req.body.grant_type);
-        authorization = decodeBase64(base64Auth).split(":");
+        authOG = decodeBase64(base64Auth);
+        authorization = authOG.split(":");
         // logger.debug(`Decoded authorization: ${authorization}`);
         if (!authorization[1])  return error.createError(
             "errors.com.epicgames.common.oauth.invalid_client",
@@ -56,11 +57,11 @@ app.post("/account/api/oauth/token", async (req, res) => {
                     "hours_expire": 4
                 }, global.JWT_SECRET, { expiresIn: 4 });
                 const decodedClient = jwt.decode(access_token);
-
+                let newDate = decodedClient.creation_date.setHours(decodedClient.hours_expire.getHours() + 4);
                 res.json({
                     access_token: `eg1~${access_token}`,
-                    expires_in: Math.round(((await DateAddHours(new Date(decodedClient.creation_date), decodedClient.hours_expire).getTime()) - (new Date().getTime())) / 1000),
-                    expires_at: await DateAddHours(new Date(decodedClient.creation_date), decodedClient.hours_expire).toISOString(),
+                    expires_in: Math.round(((newDate.getTime()) - (new Date().getTime())) / 1000),
+                    expires_at: newDate.toISOString(),
                     token_type: "bearer",
                     client_id: authorization,
                     internal_client: true,
